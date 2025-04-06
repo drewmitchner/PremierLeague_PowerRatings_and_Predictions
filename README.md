@@ -85,6 +85,16 @@ A couple insights from the 24/25 Premier League can be seen from the Power Ratin
 * Nottingham Forest had been excellent defensively for a lot of the season, briefly rising to #2 in DPR, but their form has fallen off at the time of writing. They are currently 5 points clear of fifth place, but current form suggests it will be a struggle to hold on to the Championship League places.
 
 ### 3c. Upcoming Schedule Difficulty
+With each team's OPR and DPR, we can look at each teams upcoming fixtures and predict number of goals scored and conceded, as well as number of clean sheets. In the Jupyter Workbook, the user can specify the fixture range to look at and a function will calculate the Opponent Difficulty Rating (ODR) and rank the teams by goals scored and also by number of clean sheets.
+<figure>   
+  <img src="/images/GW31-35_PredictedGoals.png" width="200" height="335">
+    <figcaption><center>Predicted goals from gameweeks 31-35.</center></figcaption>
+</figure>
+<br/><br/>
+<figure>   
+  <img src="/images/GW31-35_PredictedCleanSheet.png" width="200" height="335">
+    <figcaption><center>Predicted clean sheets and goals conceded from gameweeks 31-35.</center></figcaption>
+</figure>
 
 ### 3d. Prediction Accuracy
 Below are the linear regressions showing the accuracy of the predicted goals against each of actual goals, expected goals, and adjusted goals.
@@ -114,6 +124,7 @@ The bar chart below shows the comparison between win/draw/loss percentages with 
 </figure>
 <br/><br/>
 Overall, away teams have slightly overperformed their expectations, and previous seasons' results.
+<br/><br/>
 
 Finally, the plot below compares predicted clean sheet probabilites with actuals. For clean sheet accuracy metrics, the games are grouped in increments of 10% and then the actual number of clean sheets in those games is evaluated. The plot shows the dotted line y=x, which correlates with perfect accuracy.
 <figure>   

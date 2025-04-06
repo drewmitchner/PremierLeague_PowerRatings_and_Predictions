@@ -25,6 +25,7 @@ After each match, the predictions are compared to the match results and the powe
 * Python 3
 
 ## 3. Methodology & Results
+### 3a. Match Predictions
 In a specific match, the home and away teams' OPR and DPR are pitted against each other with a home/away correction in order to come up with predicted goals for each side. The specific formula for predicting actual goals from the Power Rankings is below:
 <br/><br/>
 home_predG = (home_team.OPR - (xG_avg - away_team.DPR))*home_correction
@@ -49,12 +50,38 @@ Using this matrix, win, draw, and loss probabilities as well as clean sheet odds
 
 From the summaries, a list is generated for the the top predicted scoring teams as well as the teams most likely to keep a clean sheet.
 <figure>   
-  <img src="/images/GW_PredictedGoals.png" width="300" height="500">
+  <img src="/images/GW_PredictedGoals.png" width="200" height="335">
     <figcaption><center>Single gameweek predicted goals list.</center></figcaption>
 </figure>
 <br/><br/>
 <figure>   
-  <img src="/images/GW_PredictedCleanSheet.png" width="300" height="500">
+  <img src="/images/GW_PredictedCleanSheet.png" width="200" height="335">
     <figcaption><center>Single gameweek predicted clean sheets.</center></figcaption>
 </figure>
 
+### Power Rating Updates
+Most importantly to this model, there is a correction step after observing the results of the games. If a team did better than expected (either scored more goals than predicted, or conceded fewer), their OPR and DPR are adjusted up or down accordingly, and vice versa for performing worse than expected.
+
+Because goals in soccer are so rare and there's a lot of variance, the team's "performance" has additional precision beyond just the actual goals scored and conceded. Specifically a new statistic called adjusted goals (adjG) is calculated. This is the average of actual goals with a couple tweaks (discount goals scored against 10 men, discount late goals scored by a team already winning, etc.) and expected goals. Expected goals (xG) is based on historical data of many years worth of shots with records for where on the field they were taken, right foot/left foot, header/volley, defenders in the way, etc. and finds how many times a player scored from that kind of shot. So if a shot from a certain position was scored 10% of the time, then that shot would be awarded an expected goal (xG) of 0.1.
+<br/><br/>
+
+The two plots below show each team's OPR and DPR over the course of the season, up to current gameweek 31 in earl April.
+<figure>   
+  <img src="/images/EPL24_OPR_GW31.png" width="800" height="500">
+    <figcaption><center>Offensive Power Ratings, gameweek 31.</center></figcaption>
+</figure>
+
+<figure>   
+  <img src="/images/EPL24_DPR_GW31.png" width="800" height="500">
+    <figcaption><center>Defensive Power Ratings, gameweek 31 (lower = better defense).</center></figcaption>
+</figure>
+<br/><br/>
+
+A couple insights from the 24/25 Premier League can be seen from the Power Rating graphs:
+* Liverpool's dominance, being comfortably the top offense from about GW8 onward and staying top even as many offenses fell away in the second half of the season. They are also second on defense, behind only Arsenal, who's good defensive form continued from last season.
+* Of the top offenses, Bouremouth stand out as the biggest surprise, putting up good offensive numbers despite losing their top forward in Dominick Solanke over the summer.
+* The three promoted teams, Southampton, Leicester, and Ipswich, are clearly the worst teams for both offense and defense. They are all very likely to be relagated, with the rest of the Premier League teams a good margin above them in terms of quality.
+* On defense, Everton, Crystal Palace, and Fulham have put up good defensive numbers right up there with Manchester City. Nottingham Forest had been excellent defensively for a lot of the season, briefly rising to #2 in DPR, but their form has fallen off at the time of writing. They are currently 5 points clear of fifth place, but current form suggests it will be a struggle to hold on to the Championship League places.
+
+### Prediction Accuracy
+Below are the linear regressions showing the accuracy of the predicted goals against each of actual goals, expected goals, and adjusted goals.

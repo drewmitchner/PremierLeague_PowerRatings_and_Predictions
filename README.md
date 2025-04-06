@@ -132,7 +132,7 @@ Finally, the plot below compares predicted clean sheet probabilites with actuals
     <figcaption><center>Predicted clean sheet probabilities compared with actuals.</center></figcaption>
 </figure>
 <br/><br/>
-The clean sheet probabilites are quite accuracte, especially for probabilities of 35% and below. There is an odd dip at the 45% which is out of line with the rest of the predictions, though that may be due to the small sample size.
+The clean sheet probabilites are quite accuracte, especially for probabilities of 35% and below. The prediction accuracy falls away slightly for clean sheet probabilities above 35%. Since these high clean sheet odds occur during large mismatches, it's possible the stronger team is either resting some of their better players or using players and/or formations that are more attack minded since they will likely be facing a team playing very defensively (e.g. with a low-block).
 <br/><br/>
 
 ## 4. Future Work

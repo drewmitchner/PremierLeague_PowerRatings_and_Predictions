@@ -81,7 +81,23 @@ A couple insights from the 24/25 Premier League can be seen from the Power Ratin
 * Liverpool's dominance, being comfortably the top offense from about GW8 onward and staying top even as many offenses fell away in the second half of the season. They are also second on defense, behind only Arsenal, who's good defensive form continued from last season.
 * Of the top offenses, Bouremouth stand out as the biggest surprise, putting up good offensive numbers despite losing their top forward in Dominick Solanke over the summer.
 * The three promoted teams, Southampton, Leicester, and Ipswich, are clearly the worst teams for both offense and defense. They are all very likely to be relagated, with the rest of the Premier League teams a good margin above them in terms of quality.
-* On defense, Everton, Crystal Palace, and Fulham have put up good defensive numbers right up there with Manchester City. Nottingham Forest had been excellent defensively for a lot of the season, briefly rising to #2 in DPR, but their form has fallen off at the time of writing. They are currently 5 points clear of fifth place, but current form suggests it will be a struggle to hold on to the Championship League places.
+* On defense, Everton, Crystal Palace, and Fulham have put up good defensive numbers right up there with Manchester City.
+* Nottingham Forest had been excellent defensively for a lot of the season, briefly rising to #2 in DPR, but their form has fallen off at the time of writing. They are currently 5 points clear of fifth place, but current form suggests it will be a struggle to hold on to the Championship League places.
 
 ### Prediction Accuracy
 Below are the linear regressions showing the accuracy of the predicted goals against each of actual goals, expected goals, and adjusted goals.
+<figure>   
+  <img src="/images/PredictedGoals_vs_ActualGoals.png" width="300" height="300">
+    <figcaption><center>Predicted goals vs actual goals.</center></figcaption>
+</figure>
+<br/><br/>
+<figure>   
+  <img src="/images/PredictedGoals_vs_ExpectedGoals.png" width="300" height="300">
+    <figcaption><center>Predicted goals vs expected goals.</center></figcaption>
+</figure>
+<br/><br/>
+<figure>   
+  <img src="/images/PredictedGoals_vs_AdjustedGoals.png" width="300" height="300">
+    <figcaption><center>Predicted goals vs adjusted goals.</center></figcaption>
+</figure>
+<br/><br/>

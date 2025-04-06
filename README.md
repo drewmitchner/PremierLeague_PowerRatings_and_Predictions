@@ -32,8 +32,29 @@ away_predG = (away_team.OPR - (xG_avg - home_team.DPR))/away_correction
 <br/><br/>
 Historically in the Premier League the home team has scored 16% more goals than average, and the away team has scored 13% fewer goals than average. This equates to about 30% more goals expected for a team playing at home vs playing away, and shows how home field is a big deal in soccer (biggest home field advantage across all major sports, interestingly).
 <br/><br/>
+
 The predicted goal number for each team is a decimal number, and a Poisson distribution is used to come up with the probability of that team scoring 0, 1, 2... goals (this analsis goes up to 6 goals). Doing that for both teams and assuming the goals scored by each team are independent of each other, a matrix of every possible score outcome is generated with the probability for each scoreline, which looks like the figure below from 538:
 <figure>   
   <img src="/images/ScoreMatrix.png" width="400" height="400">
     <figcaption><center>Scoreline probability matrix, from 538.</center></figcaption>
 </figure>
+<br/><br/>
+
+Using this matrix, win, draw, and loss probabilities as well as clean sheet odds are calculated for each team. Then for every gameweek, a list of match summaries are generated:
+<figure>   
+  <img src="/images/MatchSummaries.png" width="300" height="500">
+    <figcaption><center>Match summaries.</center></figcaption>
+</figure>
+<br/><br/>
+
+From the summaries, a list is generated for the the top predicted scoring teams as well as the teams most likely to keep a clean sheet.
+<figure>   
+  <img src="/images/GW_PredictedGoals.png" width="300" height="500">
+    <figcaption><center>Single gameweek predicted goals list.</center></figcaption>
+</figure>
+<br/><br/>
+<figure>   
+  <img src="/images/GW_PredictedCleanSheet.png" width="300" height="500">
+    <figcaption><center>Single gameweek predicted clean sheets.</center></figcaption>
+</figure>
+

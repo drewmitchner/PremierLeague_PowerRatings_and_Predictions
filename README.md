@@ -59,7 +59,7 @@ From the summaries, a list is generated for the the top predicted scoring teams 
     <figcaption><center>Single gameweek predicted clean sheets.</center></figcaption>
 </figure>
 
-### Power Rating Updates
+### 3b. Power Rating Updates
 Most importantly to this model, there is a correction step after observing the results of the games. If a team did better than expected (either scored more goals than predicted, or conceded fewer), their OPR and DPR are adjusted up or down accordingly, and vice versa for performing worse than expected.
 
 Because goals in soccer are so rare and there's a lot of variance, the team's "performance" has additional precision beyond just the actual goals scored and conceded. Specifically a new statistic called adjusted goals (adjG) is calculated. This is the average of actual goals with a couple tweaks (discount goals scored against 10 men, discount late goals scored by a team already winning, etc.) and expected goals. Expected goals (xG) is based on historical data of many years worth of shots with records for where on the field they were taken, right foot/left foot, header/volley, defenders in the way, etc. and finds how many times a player scored from that kind of shot. So if a shot from a certain position was scored 10% of the time, then that shot would be awarded an expected goal (xG) of 0.1.
@@ -84,7 +84,9 @@ A couple insights from the 24/25 Premier League can be seen from the Power Ratin
 * On defense, Everton, Crystal Palace, and Fulham have put up good defensive numbers right up there with Manchester City.
 * Nottingham Forest had been excellent defensively for a lot of the season, briefly rising to #2 in DPR, but their form has fallen off at the time of writing. They are currently 5 points clear of fifth place, but current form suggests it will be a struggle to hold on to the Championship League places.
 
-### Prediction Accuracy
+### 3c. Upcoming Schedule Difficulty
+
+### 3d. Prediction Accuracy
 Below are the linear regressions showing the accuracy of the predicted goals against each of actual goals, expected goals, and adjusted goals.
 <figure>   
   <img src="/images/PredictedGoals_vs_ActualGoals.png" width="300" height="300">
@@ -101,3 +103,25 @@ Below are the linear regressions showing the accuracy of the predicted goals aga
     <figcaption><center>Predicted goals vs adjusted goals.</center></figcaption>
 </figure>
 <br/><br/>
+
+This is roughly in line with other prediction approaches for soccer matches. With so few goals, soccer is inherently a high-variance sport (part of the reason for its worldwide appeal), but over many games there is certainly decent predictive capability.
+<br/><br/>
+
+The bar chart below shows the comparison between win/draw/loss percentages with the actual results over the course of the season so far.
+<figure>   
+  <img src="/images/EPL24_WinDrawLoss.png" width="400" height="400">
+    <figcaption><center>Predicted win/draw/loss probabilities compared with actuals.</center></figcaption>
+</figure>
+<br/><br/>
+Overall, away teams have slightly overperformed their expectations, and previous seasons' results.
+
+Finally, the plot below compares predicted clean sheet probabilites with actuals. For clean sheet accuracy metrics, the games are grouped in increments of 10% and then the actual number of clean sheets in those games is evaluated. The plot shows the dotted line y=x, which correlates with perfect accuracy.
+<figure>   
+  <img src="/images/EPL_CS.png" width="400" height="400">
+    <figcaption><center>Predicted clean sheet probabilities compared with actuals.</center></figcaption>
+</figure>
+<br/><br/>
+The clean sheet probabilites are quite accuracte, especially for probabilities of 35% and below. There is an odd dip at the 45% which is out of line with the rest of the predictions, though that may be due to the small sample size.
+<br/><br/>
+
+## 4. Future Work
